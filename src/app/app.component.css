@@ -9,3 +9,20 @@ html, body {
   height: 100%;
   overflow: auto;
 }
+
+.jqx-layout-group-auto-hide-content-vertical {
+  width: 200px;
+}
+
+.jqx-docking-layout-group-floating .jqx-window-header {
+  border-color: #e8e8e8;
+  background-color: #e8e8e8 !important;
+  background: -webkit-linear-gradient(#e8e8e8, #e8e8e8) !important;
+  background: -o-linear-gradient(#e8e8e8, #e8e8e8) !important;
+  background: -moz-linear-gradient(#e8e8e8, #e8e8e8) !important;
+  background: linear-gradient(#e8e8e8, #e8e8e8 ) !important;
+}
+
+.jqx-docking-layout-group-floating {
+  border-color: #e8e8e8 !important;
+}
