@@ -32,8 +32,7 @@ export class AppComponent implements AfterViewInit{
                 items: [{
                     type: 'autoHideGroup',
                     alignment: 'left',
-                    width: 80,
-                    unpinnedWidth: 200,
+                    width: '5%',
                     items: [{
                         type: 'layoutPanel',
                         title: 'Toolbox',
@@ -54,14 +53,14 @@ export class AppComponent implements AfterViewInit{
                 }, {
                     type: 'layoutGroup',
                     orientation: 'vertical',
-                    width: 500,
+                    width: '55%',
                     items: [{
                         type: 'documentGroup',
-                        height: 400,
-                        minHeight: 200,
+                        height: '50%',
+                        minHeight: '25%',
                         items: [{
                             type: 'documentPanel',
-                            title: 'index.htm',
+                            title: 'Document 1',
                             contentContainer: 'Document1Panel',
                             initContent: () => {
                                 let textArea = jqwidgets.createInstance('#Document1TextArea', 'jqxTextArea', { width: '100%', height: 400 });
@@ -69,7 +68,7 @@ export class AppComponent implements AfterViewInit{
                             }
                         }, {
                             type: 'documentPanel',
-                            title: 'New Document',
+                            title: 'Document 2',
                             contentContainer: 'Document2Panel',
                             initContent: () => {
                                 jqwidgets.createInstance('#Document2TextArea', 'jqxTextArea', { width: '100%', height: 400, placeHolder: 'Blank document' });
@@ -77,9 +76,9 @@ export class AppComponent implements AfterViewInit{
                         }]
                     }, {
                         type: 'tabbedGroup',
-                        height: 200,
-                        minHeight: 200,
-                        pinnedHeight: 30,
+                        height: '50%',
+                        minHeight: '25%',
+                        width:'55%',
                         items: [{
                             type: 'layoutPanel',
                             title: 'Error List',
@@ -88,8 +87,8 @@ export class AppComponent implements AfterViewInit{
                     }]
                 }, {
                     type: 'tabbedGroup',
-                    width: 220,
-                    minWidth: 200,
+                    width: '40%',
+                    minWidth: '10%',
                     items: [{
                         type: 'layoutPanel',
                         title: 'Solution Explorer',
