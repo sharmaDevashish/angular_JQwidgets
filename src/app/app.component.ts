@@ -1,4 +1,4 @@
-﻿import { Component, ViewEncapsulation , ViewChild, AfterViewInit  } from '@angular/core';
+﻿import { Component, ViewEncapsulation , ViewChild, AfterViewInit } from '@angular/core';
 import { jqxDockingLayoutComponent } from 'jqwidgets-framework/jqwidgets-ts/angular_jqxdockinglayout';
 import { jqxButtonComponent } from 'jqwidgets-framework/jqwidgets-ts/angular_jqxButtons';
 import { jqxTextAreaComponent } from 'jqwidgets-framework/jqwidgets-ts/angular_jqxTextArea';
@@ -17,9 +17,14 @@ export class AppComponent implements AfterViewInit{
     ngAfterViewInit():void{
         let width:any = 200;
         let length:any = 200;
-        document.getElementById("button1").onclick = () =>{this.dockingLayoutReference.addFloatGroup(width,length,{x:10,y:10},'layoutPanel','Title','Content','')}
+        let newItem = {type: 'documentPanel',title: 'Document 3',contentContainer: 'Document3Panel',initContent: () => {
+            jqwidgets.createInstance('#Document3TextArea', 'jqxTextArea', { width: '100%', height: 400, placeHolder: 'Blank document' });}}
         
+        document.getElementById("button1").onclick = () =>{this.dockingLayoutReference.addFloatGroup(width,length,{x:10,y:10},'layoutPanel','Title','Content','')};
+        document.getElementById("button2").onclick = () =>{this.dockingLayoutReference.addFloatGroup(width,length,{x:100,y:100},'layoutPanel','Title1','Content1','')};
     }
+
+    
 
     savedLayout: any;
 
@@ -48,6 +53,14 @@ export class AppComponent implements AfterViewInit{
                         contentContainer: 'createPanel',
                         initContent:()=>{
                             let newbutton = jqwidgets.createInstance('#button1', 'jqxButton', { width: '90%', height: 30 });
+                        }
+                    },
+                    {
+                        type: 'layoutPanel',
+                        title: 'New Doc',
+                        contentContainer: 'newDocPanel',
+                        initContent:()=>{
+                            let newdocbutton = jqwidgets.createInstance('#button2', 'jqxButton', { width: '90%', height: 30 });
                         }
                     }]
                 }, {
